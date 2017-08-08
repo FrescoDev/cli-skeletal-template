@@ -1,0 +1,35 @@
+{
+  "name": "cli-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d build",
+    "postinstall": "npm run build",
+    "clean": "rm -rf build && mkdir build",
+    "start": "node index.js",
+    "test": "mocha --recursive --reporter spec --compilers js:babel-register --require babel-polyfill tests",
+    "test:watch": "nodemon --exec npm run test tests",
+    "validate": "npm outdated",
+    "ci": "npm install && npm run test && npm run validate"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "6.23.0",
+    "commander": "^2.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.0",
+    "babel-core": "6.24.0",
+    "babel-eslint": "7.2.1",
+    "babel-polyfill": "6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "6.24.0",
+    "chai": "3.5.0",
+    "eslint": "3.18.0",
+    "eslint-plugin-babel": "^4.1.1",
+    "mocha": "3.2.0",
+    "nodemon": "1.11.0"
+  }
+}
